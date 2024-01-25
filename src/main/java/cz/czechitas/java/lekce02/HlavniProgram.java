@@ -17,10 +17,23 @@ public class HlavniProgram {
         //TODO tady bude kód
         zofka.setPenColor(Color.decode("100011"));
 
+        for (int i = 0; i < 2; i++) {
+            novaPoziceDolu();
+            novaPoziceDoprava();
+        }
         nakresliPrasatko();
 
-    }
+        for (int i = 0; i < 6; i++) {
+            novaPoziceNahoru();
+            novaPoziceDoleva();
+        }
+        nakresliSlunicko();
 
+        for (int i = 0; i < 2; i++) {
+            novaPoziceDoprava();
+        }
+        nakresliOsmiUhelnik();
+    }
 
 
     public void nakresliPrasatko() {
@@ -74,7 +87,62 @@ public class HlavniProgram {
         zofka.move(30);
         zofka.turnLeft(90);
         zofka.move(50);
+        zofka.turnRight(180);
+    }
+
+    public void novaPoziceNahoru() {
+        zofka.penUp();
+        zofka.move(100);
+        zofka.penDown();
+    }
+
+    public void novaPoziceDoprava() {
+        zofka.penUp();
         zofka.turnRight(90);
+        zofka.move(100);
+        zofka.turnLeft(90);
+        zofka.penDown();
+    }
+
+    public void novaPoziceDolu() {
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(200);
+        zofka.turnLeft(180);
+        zofka.penDown();
+    }
+
+    public void novaPoziceDoleva() {
+        zofka.penUp();
+        zofka.turnLeft(90);
+        zofka.move(100);
+        zofka.turnRight(90);
+        zofka.penDown();
+    }
+
+    public void nakresliSlunicko() {
+        for (int i = 0; i < 18; i++) {
+            zofka.turnRight(20);
+            zofka.move(20); //tímto úměrně zvětšuješ nebo zmenšuješ poloměr sluníčka
+            nakresliPaprsek();
+        }
+        zofka.turnLeft(5);
+    }
+
+    public void nakresliPaprsek() {
+        zofka.turnLeft(90);
+        zofka.move(40);
+        zofka.turnLeft(180);
+        zofka.move(40);
+        zofka.turnLeft(90);
+    }
+
+    public void nakresliOsmiUhelnik() {
+        for (int i = 0; i < 8; i++) {
+            zofka.turnRight(45);
+            zofka.move(30);
+        }
+        zofka.turnLeft(5);
     }
 
 }
