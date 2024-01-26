@@ -24,26 +24,17 @@ public class HlavniProgram {
         novaPoziceSlunicko();
         nakresliSlunicko();
 
-/*
-        for (int i = 0; i < 2; i++) {
-            novaPoziceDoprava();
-        }
-         nakresliOsmiUhelnik();
-*/
-
         novaPozicePrvniDomecek();
         nakresliDomecek();
 
         novaPoziceNahoru();
-
         nakresliDomecek();
-
         for (int i = 0; i < 4; i++) {
             novaPoziceDoprava();
             nakresliDomecek();
         }
 
-       novaPozicePosledniDomecek();
+        novaPozicePosledniDomecek();
         nakresliDomecek();
 
         zofka.penUp();
@@ -164,7 +155,8 @@ public class HlavniProgram {
 
 
     }
-    public void novaPozicePosledniDomecek () {
+
+    public void novaPozicePosledniDomecek() {
         zofka.penUp();
         zofka.turnLeft(180);
         zofka.move(230);
@@ -270,7 +262,7 @@ public class HlavniProgram {
         zofka.turnLeft(180);
     }
 
-    public void novaPozicePismeno(){
+    public void novaPozicePismeno() {
         zofka.penUp();
         zofka.turnRight(90);
         zofka.move(55);
